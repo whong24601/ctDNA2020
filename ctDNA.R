@@ -1,7 +1,7 @@
 rm(list=ls(all = TRUE))
 library(bpcp)
 
-data <- read.csv("ctDNA.csv")
+data <- read.csv("ctDNAfig2.csv")
 data2 <- data[data$Cohort1upfrontresection2n == 2,]
 time <- data2$WHRFS
 status <- data2$WHRFSstatus
@@ -25,7 +25,7 @@ group <- as.factor(data2.2$WHcleargroup)
 f2 <- fixtdiff(time=time,status=status,group=group, testtime=60,varpooled=FALSE,trans="log")
 
 cat(5,"\n")
-data5 <- read.csv("ctDNA5.csv")
+data5 <- read.csv("ctDNAfig5.csv")
 data5 <- data5[data5$WHserial !=2,]
 time <- data5$WHRFS
 status <- data5$WHRFSstatus
